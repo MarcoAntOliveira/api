@@ -1,7 +1,7 @@
 """
 Arquivo: app.py
 Descrição: Um aplicativo Flask simples com uma rota inicial.
-Autor: Seu Nome
+Autor: Marcos
 """
 
 from flask import Flask
