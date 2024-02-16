@@ -1,0 +1,22 @@
+venv/
+env/
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.chromedriver
+*.toc
+amb/
+
+# Arquivos gerados pelo Python
+*.pyc
+__pycache__
+
+# Diretórios do ambiente virtual do Pipenv
+/.venv
+/.venv/
+/Pipfile.lock
+
+!requirements.txt
