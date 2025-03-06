@@ -82,7 +82,15 @@ class SimpleHandler(BaseHTTPRequestHandler):
       data = json.dumps(lista_dict_eventos)
 
       self.wfile.write(data.encode())
-
-
-
 ```
+
+### modo debug
+no terrminal digitar export FLASK_DEBUG 1
+```shell
+export FLASK_DEBUG 1
+```
+ No momento de build a aplicação
+
+ ```shell
+  FLASK_APP=main.py FLASK_DEBUG=1 flask run
+ ```
