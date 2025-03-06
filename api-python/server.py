@@ -1,10 +1,16 @@
-# API
-Respositorio destinaddo a desnvolvimento de apis em python
-## desenvolvimento usanndo o modulo HTTP do python
+from http.server import HTTPServer, BaseHTTPRequestHandler
+from articles import Article1, Article2, Event1, Event2, Event3
+import json
 
-```python
+art1 = Article1()
+art2 = Article2()
+eve1  = Event1()
+eve2  = Event2()
+eve3  = Event3()
+
+event_list = [eve1, eve2, eve3, eve1, eve2, eve3]
+
 class SimpleHandler(BaseHTTPRequestHandler):
-  # configuranddo resquest por path
   def do_GET(self):
     if self.path == "/":
         self.send_response(200)
@@ -17,7 +23,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
             <p> Testando nosso servidor HTTP</p>
             <p> Diretório:{self.path} </p>
             </body>
-        </html>
+        </html> 
         """.encode()
         self.wfile.write(data)
     elif self.path == "/eventos/":
@@ -85,4 +91,6 @@ class SimpleHandler(BaseHTTPRequestHandler):
 
 
 
-```
+
+server = HTTPServer(('localhost', 8000), SimpleHandler)
+server.serve_forever()
